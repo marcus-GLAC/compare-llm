@@ -72,8 +72,7 @@
             border-radius: 10px;
             overflow: hidden;
         }
-        
-        th {
+          th {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
             padding: 15px 12px;
@@ -81,7 +80,8 @@
             font-weight: bold;
             position: sticky;
             top: 0;
-            z-index: 10;
+            z-index: 100;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
         
         td {
@@ -162,10 +162,62 @@
             font-weight: bold;
             color: #667eea;
         }
-        
-        .stat-label {
+          .stat-label {
             color: #666;
             margin-top: 5px;
+        }
+        
+        .analysis-section {
+            margin-top: 40px;
+            background: linear-gradient(135deg, rgba(255,255,255,0.95), rgba(248,250,252,0.95));
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .analysis-title {
+            color: #2c3e50;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            text-align: center;
+            font-weight: bold;
+        }
+        
+        .analysis-content {
+            color: #4a5568;
+            line-height: 1.8;
+            font-size: 1em;
+        }
+        
+        .analysis-content h3 {
+            color: #667eea;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+            border-left: 4px solid #667eea;
+            padding-left: 15px;
+        }
+        
+        .analysis-content ul {
+            margin: 15px 0;
+            padding-left: 25px;
+        }
+        
+        .analysis-content li {
+            margin-bottom: 8px;
+        }
+        
+        .provider-highlight {
+            font-weight: bold;
+            color: #2d3748;
+        }
+        
+        .conclusion {
+            background: linear-gradient(135deg, #667eea20, #764ba220);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            border-left: 4px solid #667eea;
         }
     </style>
 </head>
@@ -261,10 +313,9 @@
                         <td class="trend-down">📉</td>
                         <td class="notes">Mô hình mới</td>
                     </tr>
-                    
-                    <!-- Anthropic -->
+                      <!-- Anthropic -->
                     <tr class="provider-anthropic period-2024" data-provider="anthropic">
-                        <td rowspan="7">🟠 Anthropic</td>
+                        <td rowspan="9">🟠 Anthropic</td>
                         <td class="model-name">Claude Instant</td>
                         <td>Jan 2024</td>
                         <td class="price-input">$0.80</td>
@@ -286,7 +337,7 @@
                         <td class="price-input">$0.25</td>
                         <td class="price-output">$1.25</td>
                         <td class="trend-up">📈</td>
-                        <td class="notes">Phiên bản cũ</td>
+                        <td class="notes">Phiên bản cũ, có batch (50% giảm)</td>
                     </tr>
                     <tr class="provider-anthropic period-current" data-provider="anthropic">
                         <td class="model-name">Claude Haiku 3.5</td>
@@ -294,7 +345,7 @@
                         <td class="price-input">$0.80</td>
                         <td class="price-output">$4.00</td>
                         <td class="trend-up">📈</td>
-                        <td class="notes">Nhanh nhất, 200K context</td>
+                        <td class="notes">Nhanh nhất, 200K context, có batch (50% giảm)</td>
                     </tr>
                     <tr class="provider-anthropic period-2024" data-provider="anthropic">
                         <td class="model-name">Claude Sonnet 3.5</td>
@@ -302,7 +353,15 @@
                         <td class="price-input">$3.00</td>
                         <td class="price-output">$15.00</td>
                         <td class="trend-stable">➡️</td>
-                        <td class="notes">200K context, Prompt Caching</td>
+                        <td class="notes">200K context, Prompt Caching, có batch (50% giảm)</td>
+                    </tr>
+                    <tr class="provider-anthropic period-current" data-provider="anthropic">
+                        <td class="model-name">Claude Sonnet 3.7</td>
+                        <td>May 2025</td>
+                        <td class="price-input">$3.00</td>
+                        <td class="price-output">$15.00</td>
+                        <td class="trend-stable">➡️</td>
+                        <td class="notes">Cân bằng, 200K context, có batch (50% giảm)</td>
                     </tr>
                     <tr class="provider-anthropic period-current" data-provider="anthropic">
                         <td class="model-name">Claude Sonnet 4</td>
@@ -310,7 +369,15 @@
                         <td class="price-input">$3.00</td>
                         <td class="price-output">$15.00</td>
                         <td class="trend-stable">➡️</td>
-                        <td class="notes">Cân bằng, 200K context</td>
+                        <td class="notes">Cân bằng, 200K context, có batch (50% giảm)</td>
+                    </tr>
+                    <tr class="provider-anthropic period-current" data-provider="anthropic">
+                        <td class="model-name">Claude Opus 3</td>
+                        <td>May 2025</td>
+                        <td class="price-input">$15.00</td>
+                        <td class="price-output">$75.00</td>
+                        <td class="trend-stable">➡️</td>
+                        <td class="notes">Thông minh nhất (Gen 3), 200K context, có batch (50% giảm)</td>
                     </tr>
                     <tr class="provider-anthropic period-current" data-provider="anthropic">
                         <td class="model-name">Claude Opus 4</td>
@@ -318,12 +385,11 @@
                         <td class="price-input">$15.00</td>
                         <td class="price-output">$75.00</td>
                         <td class="trend-stable">➡️</td>
-                        <td class="notes">Thông minh nhất, 200K context</td>
+                        <td class="notes">Thông minh nhất (Gen 4), 200K context, có batch (50% giảm)</td>
                     </tr>
-                    
-                    <!-- Google -->
+                      <!-- Google -->
                     <tr class="provider-google period-2024" data-provider="google">
-                        <td rowspan="4">🔵 Google</td>
+                        <td rowspan="14">🔵 Google</td>
                         <td class="model-name">Gemini Pro</td>
                         <td>Early 2024</td>
                         <td class="price-input">$0.25</td>
@@ -332,12 +398,20 @@
                         <td class="notes">Mô hình cơ bản</td>
                     </tr>
                     <tr class="provider-google period-current" data-provider="google">
+                        <td class="model-name">Gemini 1.5 Flash-8B</td>
+                        <td>May 2025</td>
+                        <td class="price-input">$0.0375 - $0.075</td>
+                        <td class="price-output">$0.15 - $0.30</td>
+                        <td class="trend-down">📉</td>
+                        <td class="notes">Mô hình nhỏ nhất, <=128K/>128K</td>
+                    </tr>
+                    <tr class="provider-google period-current" data-provider="google">
                         <td class="model-name">Gemini 1.5 Flash</td>
                         <td>May 2025</td>
-                        <td class="price-input">$0.15</td>
-                        <td class="price-output">$0.60</td>
+                        <td class="price-input">$0.075 - $0.15</td>
+                        <td class="price-output">$0.30 - $0.60</td>
                         <td class="trend-down">📉</td>
-                        <td class="notes">Text/Image/Video hỗ trợ</td>
+                        <td class="notes">Text/Image/Video hỗ trợ, <=128K/>128K</td>
                     </tr>
                     <tr class="provider-google period-current" data-provider="google">
                         <td class="model-name">Gemini 1.5 Pro</td>
@@ -345,21 +419,92 @@
                         <td class="price-input">$1.25 - $2.50</td>
                         <td class="price-output">$5.00 - $10.00</td>
                         <td class="trend-up">📈</td>
-                        <td class="notes">2M tokens context</td>
+                        <td class="notes">2M tokens context, <=128K/>128K</td>
+                    </tr>
+                    <tr class="provider-google period-current" data-provider="google">
+                        <td class="model-name">Gemini 2.0 Flash-Lite</td>
+                        <td>May 2025</td>
+                        <td class="price-input">$0.075</td>
+                        <td class="price-output">$0.30</td>
+                        <td class="trend-down">📉</td>
+                        <td class="notes">Mô hình nhỏ nhất và hiệu quả chi phí</td>
+                    </tr>
+                    <tr class="provider-google period-current" data-provider="google">
+                        <td class="model-name">Gemini 2.0 Flash</td>
+                        <td>May 2025</td>
+                        <td class="price-input">$0.10 - $0.70</td>
+                        <td class="price-output">$0.40</td>
+                        <td class="trend-down">📉</td>
+                        <td class="notes">Text/Image/Video/Audio, tạo ảnh</td>
+                    </tr>
+                    <tr class="provider-google period-current" data-provider="google">
+                        <td class="model-name">Gemini 2.5 Flash Preview</td>
+                        <td>May 2025</td>
+                        <td class="price-input">$0.15 - $1.00</td>
+                        <td class="price-output">$0.60 - $3.50</td>
+                        <td class="trend-stable">➡️</td>
+                        <td class="notes">Preview model, có tư duy</td>
                     </tr>
                     <tr class="provider-google period-current" data-provider="google">
                         <td class="model-name">Gemini 2.5 Pro Preview</td>
                         <td>May 2025</td>
-                        <td class="price-input">$0.50</td>
-                        <td class="price-output">$2.00</td>
+                        <td class="price-input">$1.25 - $2.50</td>
+                        <td class="price-output">$10.00 - $15.00</td>
                         <td class="trend-stable">➡️</td>
-                        <td class="notes">Preview model</td>
+                        <td class="notes">Preview model, <=200K/>200K</td>
                     </tr>
-                    
-                    <!-- DeepSeek -->
+                    <tr class="provider-google period-current" data-provider="google">
+                        <td class="model-name">Gemini 2.5 Flash Native Audio</td>
+                        <td>May 2025</td>
+                        <td class="price-input">$0.50 - $3.00</td>
+                        <td class="price-output">$2.00 - $12.00</td>
+                        <td class="trend-stable">➡️</td>
+                        <td class="notes">Tối ưu cho đầu ra âm thanh</td>
+                    </tr>
+                    <tr class="provider-google period-current" data-provider="google">
+                        <td class="model-name">Gemini 2.5 Flash TTS</td>
+                        <td>May 2025</td>
+                        <td class="price-input">$0.50</td>
+                        <td class="price-output">$10.00</td>
+                        <td class="trend-stable">➡️</td>
+                        <td class="notes">Text-to-speech tốc độ cao</td>
+                    </tr>
+                    <tr class="provider-google period-current" data-provider="google">
+                        <td class="model-name">Gemini 2.5 Pro TTS</td>
+                        <td>May 2025</td>
+                        <td class="price-input">$1.00</td>
+                        <td class="price-output">$20.00</td>
+                        <td class="trend-stable">➡️</td>
+                        <td class="notes">Text-to-speech chất lượng cao</td>
+                    </tr>
+                    <tr class="provider-google period-current" data-provider="google">
+                        <td class="model-name">Imagen 3</td>
+                        <td>May 2025</td>
+                        <td class="price-input">-</td>
+                        <td class="price-output">$0.03/ảnh</td>
+                        <td class="trend-stable">➡️</td>
+                        <td class="notes">Tạo ảnh chất lượng cao</td>
+                    </tr>
+                    <tr class="provider-google period-current" data-provider="google">
+                        <td class="model-name">Veo 2</td>
+                        <td>May 2025</td>
+                        <td class="price-input">-</td>
+                        <td class="price-output">$0.35/giây</td>
+                        <td class="trend-stable">➡️</td>
+                        <td class="notes">Tạo video chất lượng cao</td>
+                    </tr>
+                    <tr class="provider-google period-current" data-provider="google">
+                        <td class="model-name">Gemma 3</td>
+                        <td>May 2025</td>
+                        <td class="price-input">Miễn phí</td>
+                        <td class="price-output">Miễn phí</td>
+                        <td class="trend-stable">➡️</td>
+                        <td class="notes">Mô hình mã nguồn mở</td>
+                    </tr>
+                      <!-- DeepSeek -->
                     <tr class="provider-deepseek period-2024" data-provider="deepseek">
-                        <td rowspan="4">🔴 DeepSeek</td>
-                        <td class="model-name">DeepSeek-Chat (V3)</td>
+                        <td rowspan="6">🔴 DeepSeek</td>
+                        <td class="model-name">DeepSeek-Chat (V3) Old</td>
                         <td>Before Mar 2025</td>
                         <td class="price-input">$0.28</td>
                         <td class="price-output">$1.10</td>
@@ -367,7 +512,7 @@
                         <td class="notes">Giá trước đây</td>
                     </tr>
                     <tr class="provider-deepseek period-early2025" data-provider="deepseek">
-                        <td class="model-name">DeepSeek-Chat (V3)</td>
+                        <td class="model-name">DeepSeek-Chat (V3) Discount</td>
                         <td>Mar 2025</td>
                         <td class="price-input">$0.14</td>
                         <td class="price-output">$0.70</td>
@@ -375,41 +520,117 @@
                         <td class="notes">Giá giảm mạnh</td>
                     </tr>
                     <tr class="provider-deepseek period-current" data-provider="deepseek">
-                        <td class="model-name">DeepSeek-Chat (V3)</td>
+                        <td class="model-name">DeepSeek-Chat (V3) Standard</td>
                         <td>May 2025</td>
                         <td class="price-input">$0.27</td>
                         <td class="price-output">$1.10</td>
                         <td class="trend-up">📈</td>
-                        <td class="notes">Cache Miss, Standard Time</td>
+                        <td class="notes">Cache Miss, Standard Time (UTC 00:30-16:30)</td>
                     </tr>
-                    <tr class="provider-deepseek period-early2025" data-provider="deepseek">
-                        <td class="model-name">DeepSeek-Reasoner (R1)</td>
-                        <td>Mar 2025</td>
+                    <tr class="provider-deepseek period-current" data-provider="deepseek">
+                        <td class="model-name">DeepSeek-Chat (V3) Discount</td>
+                        <td>May 2025</td>
+                        <td class="price-input">$0.135</td>
+                        <td class="price-output">$0.550</td>
+                        <td class="trend-down">📉</td>
+                        <td class="notes">Giá ưu đãi (UTC 16:30-00:30), giảm 50%</td>
+                    </tr>
+                    <tr class="provider-deepseek period-current" data-provider="deepseek">
+                        <td class="model-name">DeepSeek-Reasoner (R1) Standard</td>
+                        <td>May 2025</td>
                         <td class="price-input">$0.55</td>
                         <td class="price-output">$2.19</td>
                         <td class="trend-stable">➡️</td>
-                        <td class="notes">Reasoning model</td>
+                        <td class="notes">Reasoning model, Standard Time</td>
+                    </tr>
+                    <tr class="provider-deepseek period-current" data-provider="deepseek">
+                        <td class="model-name">DeepSeek-Reasoner (R1) Discount</td>
+                        <td>May 2025</td>
+                        <td class="price-input">$0.275</td>
+                        <td class="price-output">$1.095</td>
+                        <td class="trend-down">📉</td>
+                        <td class="notes">Reasoning model, giảm 50% (UTC 16:30-00:30)</td>
                     </tr>
                 </tbody>
             </table>
         </div>
-        
-        <div class="summary-stats">
+          <div class="summary-stats">
             <div class="stat-card">
-                <div class="stat-number">-67%</div>
-                <div class="stat-label">Giảm giá lớn nhất<br>(GPT-3.5 Turbo)</div>
+                <div class="stat-number">-75%</div>
+                <div class="stat-label">Giảm giá lớn nhất<br>(GPT-4o so với GPT-4)</div>
             </div>
             <div class="stat-card">
-                <div class="stat-number">$0.15</div>
-                <div class="stat-label">Giá input thấp nhất<br>(GPT-4o mini, Gemini 1.5 Flash)</div>
+                <div class="stat-number">$0.0375</div>
+                <div class="stat-label">Giá input thấp nhất<br>(Gemini 1.5 Flash-8B)</div>
             </div>
             <div class="stat-card">
                 <div class="stat-number">2M</div>
-                <div class="stat-label">Context window lớn nhất<br>(Gemini 1.5 Pro)</div>
+                <div class="stat-label">Context window lớn nhất<br>(Gemini 1.5 Pro, Gemini 2.5)</div>
             </div>
             <div class="stat-card">
-                <div class="stat-number">23</div>
+                <div class="stat-number">37</div>
                 <div class="stat-label">Tổng số mô hình<br>được so sánh</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">50%</div>
+                <div class="stat-label">Giảm giá DeepSeek<br>vào giờ thấp điểm</div>
+            </div>            <div class="stat-card">
+                <div class="stat-number">Miễn phí</div>
+                <div class="stat-label">Gemma 3<br>Mô hình mã nguồn mở</div>
+            </div>
+        </div>
+        
+        <div class="analysis-section">
+            <h2 class="analysis-title">📈 Nhận Xét Về Sự Thay Đổi Giá Trong Khoảng Thời Gian Qua</h2>
+            
+            <div class="analysis-content">
+                <h3>1. Xu hướng chung</h3>
+                <p>Dữ liệu từ các nguồn xác nhận xu hướng <strong>giảm chi phí</strong> cho các mô hình LLM. Mặc dù việc so sánh trực tiếp giá của cùng một mô hình qua một năm là khó khăn do sự ra mắt của các phiên bản và mô hình mới, nhưng rõ ràng các mô hình mới hơn thường cung cấp <strong>hiệu suất tốt hơn với chi phí thấp hơn</strong> so với các mô hình hàng đầu của năm trước.</p>
+
+                <h3>2. <span class="provider-highlight">OpenAI</span></h3>
+                <ul>
+                    <li><strong>GPT-3.5 Turbo</strong> đã giảm giá đáng kể từ khoảng 1 năm trước (Tháng 2/2024) đến đầu năm 2025 (Tháng 1/2025).</li>
+                    <li><strong>GPT-4</strong> và <strong>GPT-4 Turbo</strong> có vẻ duy trì mức giá tương đối ổn định trong khoảng nửa đầu năm 2024.</li>
+                    <li>Sự ra mắt của <strong>GPT-4o</strong> vào khoảng giữa năm 2024 và sự điều chỉnh giá sau đó (đến Tháng 5/2025) cho thấy một mô hình có khả năng đa phương thức cao hơn được cung cấp với mức giá thấp hơn đáng kể so với GPT-4 hoặc GPT-4 Turbo. Phiên bản nhỏ hơn là <strong>GPT-4o mini</strong> còn có giá thấp hơn nhiều.</li>
+                </ul>
+
+                <h3>3. <span class="provider-highlight">Anthropic</span></h3>
+                <ul>
+                    <li>Các mô hình cũ như <strong>Claude Instant</strong> và <strong>Claude 2.1</strong> có giá được ghi nhận vào khoảng đầu năm 2024.</li>
+                    <li>Các mô hình mới hơn như <strong>Claude Haiku, Sonnet, Opus</strong> được giới thiệu và có giá vào khoảng giữa năm 2024 (ví dụ Claude Sonnet 3.5 bản tháng 6) và được cập nhật đến các phiên bản 3.5, 4 vào năm 2025.</li>
+                    <li><strong>Claude Haiku 3.5</strong> được nhấn mạnh là mô hình tiết kiệm chi phí nhất của Anthropic.</li>
+                    <li>Giá của các tier <strong>Sonnet</strong> và <strong>Opus</strong> (phiên bản 4) vào Tháng 5/2025 tương tự với các phiên bản trước đó (Sonnet 3.5).</li>
+                </ul>
+
+                <h3>4. <span class="provider-highlight">Google</span></h3>
+                <ul>
+                    <li>Giá của <strong>Gemini Pro</strong> vào khoảng đầu năm 2024 khá cạnh tranh.</li>
+                    <li>Trong năm 2025, Google đã giới thiệu các mô hình mới như <strong>Gemini 1.5 Flash</strong> và <strong>Gemini 1.5 Pro</strong>.</li>
+                    <li><strong>Gemini 1.5 Flash</strong> cung cấp mức giá rất thấp cho đầu vào và đầu ra.</li>
+                    <li><strong>Gemini 1.5 Pro</strong> cung cấp cửa sổ ngữ cảnh rất lớn (2 triệu token), và giá của nó có sự khác biệt tùy thuộc vào kích thước prompt.</li>
+                    <li>Việc Google ra mắt các mô hình mới với cấu trúc giá cạnh tranh (và các mô hình preview như <strong>Gemini 2.5 Pro Preview</strong>) cho thấy áp lực giảm giá và cạnh tranh mạnh mẽ trong thị trường LLM.</li>
+                </ul>
+
+                <h3>5. <span class="provider-highlight">DeepSeek</span></h3>
+                <ul>
+                    <li>Dữ liệu cho thấy DeepSeek đã giảm giá cho mô hình <strong>DeepSeek-Chat (V3)</strong> vào khoảng tháng 3/2025 so với giá trước đó (0.28 → 0.14 Input, 1.10 → 0.70 Output). Tuy nhiên, các nguồn cập nhật sau đó (Tháng 5/2025) lại hiển thị giá tiêu chuẩn quay về mức cao hơn (0.27 Input, 1.10 Output). Điều này có thể do sự khác biệt giữa các nguồn hoặc chiến lược giá thay đổi.</li>
+                    <li><strong>DeepSeek-Reasoner (R1)</strong> có mức giá tương đối ổn định trong khoảng đầu năm 2025.</li>
+                    <li>DeepSeek cung cấp <strong>giảm giá đáng kể</strong> cho các yêu cầu vào giờ thấp điểm (UTC 16:30-00:30).</li>
+                </ul>
+
+                <div class="conclusion">
+                    <h3>🎯 Tóm lại</h3>
+                    <p>Trong khoảng thời gian từ 4 tháng đến 1 năm trước đến hiện tại, <strong>chi phí sử dụng LLM nhìn chung có xu hướng giảm xuống</strong>, đặc biệt khi các nhà cung cấp ra mắt các mô hình mới hiệu quả hơn (như GPT-4o, Gemini 1.5 Flash, Claude Haiku 3.5) hoặc điều chỉnh giá các mô hình hiện có (như GPT-3.5 Turbo, DeepSeek-Chat V3 trong một giai đoạn).</p>
+                    
+                    <p>Tuy nhiên, các mô hình cao cấp nhất cho các tác vụ phức tạp vẫn giữ mức giá tương đối cao (như Claude Opus 4, OpenAI o1). Việc lựa chọn mô hình phù hợp nhất không chỉ dựa vào giá mỗi token mà còn cần cân nhắc đến:</p>
+                    
+                    <ul>
+                        <li>🎯 <strong>Hiệu suất cho tác vụ cụ thể</strong></li>
+                        <li>📊 <strong>Kích thước cửa sổ ngữ cảnh</strong></li>
+                        <li>🛠️ <strong>Các tính năng bổ sung</strong> (multimodal, tool use, v.v.)</li>
+                        <li>🔒 <strong>Yêu cầu về bảo mật dữ liệu</strong></li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
