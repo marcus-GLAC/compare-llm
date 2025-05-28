@@ -219,12 +219,36 @@
             margin-top: 20px;
             border-left: 4px solid #667eea;
         }
+        
+        .external-btn {
+            display: inline-block;
+            padding: 12px 24px;
+            margin: 0 10px;
+            border-radius: 30px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        
+        .external-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+            background: linear-gradient(45deg, #764ba2, #667eea);
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>📊 So Sánh Giá LLM Theo Thời Gian</h1>
         
+        <div class="external-links" style="text-align: center; margin-bottom: 20px;">
+            <a href="https://www.together.ai/pricing" target="_blank" class="external-btn">Together.ai</a>
+            <a href="https://openrouter.ai/" target="_blank" class="external-btn">OpenRouter</a>
+        </div>
+
         <div class="filter-controls">
             <button class="filter-btn active" onclick="filterProvider('all')">Tất cả</button>
             <button class="filter-btn" onclick="filterProvider('openai')">OpenAI</button>
