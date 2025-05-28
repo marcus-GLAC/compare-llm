@@ -100,6 +100,7 @@
         .provider-anthropic { border-left: 5px solid #d4a574; }
         .provider-google { border-left: 5px solid #4285f4; }
         .provider-deepseek { border-left: 5px solid #ff6b6b; }
+        .provider-mistral { border-left: 5px solid #9c27b0; }
         
         .price-input { 
             color: #2563eb; 
@@ -243,6 +244,9 @@
 <body>
     <div class="container">
         <h1>📊 So Sánh Giá LLM Theo Thời Gian</h1>
+        <div class="update-time" style="text-align: center; margin: -10px 0 20px; color: #666; font-style: italic; font-size: 0.9em;">
+            Dữ liệu được cập nhật: 28/05/2025
+        </div>
         
         <div class="external-links" style="text-align: center; margin-bottom: 20px;">
             <a href="https://www.together.ai/pricing" target="_blank" class="external-btn">Together.ai</a>
@@ -255,6 +259,7 @@
             <button class="filter-btn" onclick="filterProvider('anthropic')">Anthropic</button>
             <button class="filter-btn" onclick="filterProvider('google')">Google</button>
             <button class="filter-btn" onclick="filterProvider('deepseek')">DeepSeek</button>
+            <button class="filter-btn" onclick="filterProvider('mistral')">Mistral</button>
         </div>
         
         <div class="table-container">
@@ -575,6 +580,136 @@
                         <td class="trend-down">📉</td>
                         <td class="notes">Reasoning model, giảm 50% (UTC 16:30-00:30)</td>
                     </tr>
+                    <!-- Mistral -->
+                    <tr class="provider-mistral period-current" data-provider="mistral">
+                        <td rowspan="16">🟣 Mistral</td>
+                        <td class="model-name">Mistral Medium 3</td>
+                        <td>May 2025</td>
+                        <td class="price-input">$0.40</td>
+                        <td class="price-output">$2.00</td>
+                        <td class="trend-stable">➡️</td>
+                        <td class="notes">Hiệu suất tiên tiến, triển khai doanh nghiệp</td>
+                    </tr>
+                    <tr class="provider-mistral period-current" data-provider="mistral">
+                        <td class="model-name">Codestral</td>
+                        <td>May 2025</td>
+                        <td class="price-input">$0.30</td>
+                        <td class="price-output">$0.90</td>
+                        <td class="trend-stable">➡️</td>
+                        <td class="notes">Mô hình nhẹ, thành thạo 80+ ngôn ngữ lập trình</td>
+                    </tr>
+                    <tr class="provider-mistral period-current" data-provider="mistral">
+                        <td class="model-name">Mistral Saba</td>
+                        <td>May 2025</td>
+                        <td class="price-input">$0.20</td>
+                        <td class="price-output">$0.60</td>
+                        <td class="trend-stable">➡️</td>
+                        <td class="notes">Tùy chỉnh cho khu vực Trung Đông và Nam Á</td>
+                    </tr>
+                    <tr class="provider-mistral period-current" data-provider="mistral">
+                        <td class="model-name">Mistral Large</td>
+                        <td>May 2025</td>
+                        <td class="price-input">$2.00</td>
+                        <td class="price-output">$6.00</td>
+                        <td class="trend-stable">➡️</td>
+                        <td class="notes">Suy luận hàng đầu cho tác vụ phức tạp</td>
+                    </tr>
+                    <tr class="provider-mistral period-current" data-provider="mistral">
+                        <td class="model-name">Pixtral Large</td>
+                        <td>May 2025</td>
+                        <td class="price-input">$2.00</td>
+                        <td class="price-output">$6.00</td>
+                        <td class="trend-stable">➡️</td>
+                        <td class="notes">Mô hình lớn xử lý hình ảnh</td>
+                    </tr>
+                    <tr class="provider-mistral period-current" data-provider="mistral">
+                        <td class="model-name">Ministral 8B 24.10</td>
+                        <td>May 2025</td>
+                        <td class="price-input">$0.10</td>
+                        <td class="price-output">$0.10</td>
+                        <td class="trend-stable">➡️</td>
+                        <td class="notes">Mô hình mạnh cho on-device</td>
+                    </tr>
+                    <tr class="provider-mistral period-current" data-provider="mistral">
+                        <td class="model-name">Ministral 3B 24.10</td>
+                        <td>May 2025</td>
+                        <td class="price-input">$0.04</td>
+                        <td class="price-output">$0.04</td>
+                        <td class="trend-stable">➡️</td>
+                        <td class="notes">Edge model hiệu quả nhất</td>
+                    </tr>
+                    <tr class="provider-mistral period-current" data-provider="mistral">
+                        <td class="model-name">Mistral Embed</td>
+                        <td>May 2025</td>
+                        <td class="price-input">$0.10</td>
+                        <td class="price-output">-</td>
+                        <td class="trend-stable">➡️</td>
+                        <td class="notes">Text embedding model</td>
+                    </tr>
+                    <tr class="provider-mistral period-current" data-provider="mistral">
+                        <td class="model-name">Mistral Moderation 24.11</td>
+                        <td>May 2025</td>
+                        <td class="price-input">$0.10</td>
+                        <td class="price-output">-</td>
+                        <td class="trend-stable">➡️</td>
+                        <td class="notes">Classifier cho kiểm duyệt nội dung</td>
+                    </tr>
+                    <tr class="provider-mistral period-current" data-provider="mistral">
+                        <td class="model-name">Mistral Small 3.1</td>
+                        <td>May 2025</td>
+                        <td class="price-input">$0.10</td>
+                        <td class="price-output">$0.30</td>
+                        <td class="trend-down">📉</td>
+                        <td class="notes">SOTA, multimodal & multilingual (Open)</td>
+                    </tr>
+                    <tr class="provider-mistral period-current" data-provider="mistral">
+                        <td class="model-name">Devstral</td>
+                        <td>May 2025</td>
+                        <td class="price-input">$0.10</td>
+                        <td class="price-output">$0.30</td>
+                        <td class="trend-stable">➡️</td>
+                        <td class="notes">Mô hình nguồn mở cho coding agents</td>
+                    </tr>
+                    <tr class="provider-mistral period-current" data-provider="mistral">
+                        <td class="model-name">Pixtral 12B</td>
+                        <td>May 2025</td>
+                        <td class="price-input">$0.15</td>
+                        <td class="price-output">$0.15</td>
+                        <td class="trend-stable">➡️</td>
+                        <td class="notes">Mô hình nhỏ xử lý hình ảnh</td>
+                    </tr>
+                    <tr class="provider-mistral period-current" data-provider="mistral">
+                        <td class="model-name">Mistral NeMo</td>
+                        <td>May 2025</td>
+                        <td class="price-input">$0.15</td>
+                        <td class="price-output">$0.15</td>
+                        <td class="trend-stable">➡️</td>
+                        <td class="notes">SOTA cho tác vụ mã hóa</td>
+                    </tr>
+                    <tr class="provider-mistral period-current" data-provider="mistral">
+                        <td class="model-name">Mistral 7B</td>
+                        <td>May 2025</td>
+                        <td class="price-input">$0.25</td>
+                        <td class="price-output">$0.25</td>
+                        <td class="trend-stable">➡️</td>
+                        <td class="notes">Transformer 7B, dễ tùy chỉnh</td>
+                    </tr>
+                    <tr class="provider-mistral period-current" data-provider="mistral">
+                        <td class="model-name">Mixtral 8x7B</td>
+                        <td>May 2025</td>
+                        <td class="price-input">$0.70</td>
+                        <td class="price-output">$0.70</td>
+                        <td class="trend-stable">➡️</td>
+                        <td class="notes">SMoE 7B (12.9B/45B params)</td>
+                    </tr>
+                    <tr class="provider-mistral period-current" data-provider="mistral">
+                        <td class="model-name">Mixtral 8x22B</td>
+                        <td>May 2025</td>
+                        <td class="price-input">$2.00</td>
+                        <td class="price-output">$6.00</td>
+                        <td class="trend-stable">➡️</td>
+                        <td class="notes">SMoE lớn nhất (39B/141B params)</td>
+                    </tr>
                 </tbody>
             </table>
         </div>
@@ -592,7 +727,7 @@
                 <div class="stat-label">Context window lớn nhất<br>(Gemini 1.5 Pro, Gemini 2.5)</div>
             </div>
             <div class="stat-card">
-                <div class="stat-number">37</div>
+                <div class="stat-number">53</div>
                 <div class="stat-label">Tổng số mô hình<br>được so sánh</div>
             </div>
             <div class="stat-card">
